@@ -1,4 +1,4 @@
-# AC-Controller
+# P&S Power Electronics AC-Controller
 Paul and sabrina AC-Controller and driver board
 
 

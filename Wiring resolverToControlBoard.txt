@@ -1,0 +1,32 @@
+Notice the writing for the pinouts for the resolver board.  The 7 pin connector goes:
+
+See the attached ResolverToEncoder17Pinout.pdf.
+
+The following goes to the resolver:
+GND (this is optional, but would be connected to the shield of a 7 pin shielded cable).
+!EX 
+EX 
+SIN+ 
+SIN-
+COS-
+COS+
+
+The following goes to the control/driver board:
++24v
++5v
+GND
+QEA
+QEB
+I (this is short of index)
+
+On the control/driver board, see the pinout attached.  The view of the ACControlDriver26Pinout.pdf is of the top of the board, which is the surface mount components.  See the 6 connections on that board called:
+Encoder +24v
+Encoder +5v
+Encoder GND
+Encoder QEA
+Encoder QEB
+Encoder INDEX
+
+Those pins go to the resolver to encoder board's 6 pin connector.
+
+-Paul

@@ -1,0 +1,13 @@
+programming the AC control/driver board:
+
+1.  Using an AVR programmer, such as an AVRISP MKii, plug it into the 2x3 pin connector (with a 0.1" x 0.1" pitch) on the board.  The red stripe on the ribbon wire goes with the
+dot on the board.
+
+using Atmel Studio (I use Atmel Studio 7), go to Tools -> Device Programming.  Under "Device", select ATTiny25.
+Under the "Memories" tab, select the ATTiny .hex code under the "flash" label.  Then program the chip (click "program").  Don't do anything with the "EEProm" area.
+
+2.  For the dsp30f4011 chip, plug in a pickit 3 into the 6 x 1 connector, with the dot on the board corresponding to the triangle on the pickit 3.  I use MPLAB IDE 8.83.  
+If you also use that, click on File -> Import.  Then select the AC controller software .hex file.  Then go to Programmer -> Select Programmer -> Pickit 3.
+
+Then, turn on the 24v power to the board, and then go to Programmer -> Program.
+

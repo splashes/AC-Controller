@@ -1,0 +1,14 @@
+throttle configuration:
+
+throttle fault < max regen < min regen < min positive torque < max positive torque
+
+So, a possible configuration for a standard hall effect throttle would be:
+
+throttle fault = 5
+max regen = 50
+min regen = 200
+min positive torque = 250
+max positive torque = 900
+
+So, "zero torque command" is in 200-250.  Then, when you release the throttle completely, it might show 50 on the microcontroller, so you would get max regen until you come to a stop.
+Full throttle would be around 900 (1023 would mean 5.0 volts for the analog signal).

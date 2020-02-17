@@ -1,0 +1,30 @@
+Testing your newly soldered board:
+
+Connect the 3 current sensors.
+
+Jumper together J2/J3/J14, J7/J8/J15, and J11/J12/J4 (this disables the desaturation detection circuit, to allow the PWM to get through for testing)
+
+Connect an AVRISP MKii (or some other avr programmer) to J41.  
+
+Attach +24v to J38, and the 24v ground to J39.  
+Program the ATTiny25 with DC-DC-Converter.hex.  You will need Atmel Studio, which is free, and something like an AVR isp mkii, or some other AVR programmer.
+With power still attached, measure the voltage between each pair of back metal tabs of Q3/Q4, Q5/Q6, Q7/Q8, Q9/Q10, Q11/Q12, Q13/Q14.
+You should get around 24v (+/-) for each measurement.  If you don't, check your soldering!
+Disconnect 24v power.  Remove the AVRISP MKii.
+
+
+Attach PICKit3.  
+**Optional Extra step if you have MPLab installed, and can compile the AC controller software**
+uncomment the line "#define DEBUG_MODE" in ACController.h.
+Compile and program (in release mode) the dsPIC30F4011.  Measure the voltage from 0v to each of "GATE" across the top of the board. You should get around 3v each time.
+Now, comment out the line "define DEBUG_MODE", so it looks like this:
+// #define DEBUG_MODE
+rather than
+#define DEBUG_MODE
+And then recompile the code and program the chip.  You are done!
+**End of optional extra step**
+
+Program the dsPIC30F4011 with the provided .hex file.  It will be called something like ACController.hex. Put the negative
+probe of the volt meter on any of the test points across the top labeled 0v.  They are all connected right now because of the jumper wires you added.
+With the positive lead of the volt meter, measure all the test points labeled "GATE". It should alternate -8v & 15v as you go left to right, measuring
+"GATE" of all 6 isolated supplies.

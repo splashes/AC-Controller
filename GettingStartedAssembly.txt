@@ -1,0 +1,24 @@
+Hello!  OK, let's start with the PDF.  The default is to use a hall effect throttle.  You can use either needle nose pliers and a little dab of solder, or a proper crimping tool like this (there may be a cheap chinese equivalent, but I'm not sure):
+https://www.amazon.com/Engineer-PA-09-Micro-Connector-Crimpers/dp/B002AVVO7K
+
+For the power section, I would suggest plugging in your board to 3 IGBT half bridges, and then placing the IGBTs/board on an aluminum plate and then mark the 12 IGBT holes.  Then you can drill the 12 holes with a hand drill and once they are fixed, all you need to do is add a B+ and B- copper sheet that bolts to the 3 B+ and B- points on the IGBTs (see the PDF).  I recommend making the copper sheets so the cross section is like this:  ][.  Then put an isolation between the 2 sheets.  Something like Kapton tape, or nomex paper.  So it would be like this:  ]|[.  ] would be B+, [ would be B-, and | would be the nomex paper or Kapton tape.  The idea is to bolt on the capacitor(s) upside down to B+ and B- sheets, and also bolt the sheets to all 3 IGBT half bridges.
+
+I would suggest these capacitors in terms of easiness to work with:
+http://www.mouser.com/ProductDetail/Kemet/C4DEFPQ6380A8TK/?qs=%2fha2pyFaduirlwqMzJdHObEtto18oyxlysT8gAtZWUnxAPJA0UHMcQ%3d%3d
+
+3 will fit, but It all depends on what power requirement you have.  Alternatively, I would get this:
+http://www.sbelectronics.com/product/700d348-power-ring/
+It's more mechanically awkward, but is capable of higher power.
+
+next, decide what current sensors you are going to use.  What is the maximum current your motor will see?  I recommend Lem Hass 50-s, 100-s, 200-s, 300-s, 400-s current sensors.  Depending on the sort of current sensor and where you mount them, will determine how you will build your current sensor cables.  I suggest 3 of them for extra safety.
+
+The board needs +24v for power.  To get that I would suggest this:
+http://www.mouser.com/ProductDetail/Mean-Well/SD-15A-24/?qs=sGAEpiMZZMvGsmoEFRKS8N2RkxUSJnDinUf%252b7ghl12k%3d
+
+Then you can use the car's +12v auxiliary battery for powering the DC-DC, which in turn powers the board.
+
+ I'm putting together a video assembly, but it's not done.  One possible assembly process is here (specifically designed around the 16 tab ring capacitor):
+http://www.instructables.com/id/200kW-AC-Motor-Controller-for-Electric-Car/
+
+
+-Paul
